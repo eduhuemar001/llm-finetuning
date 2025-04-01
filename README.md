@@ -1,1 +1,1 @@
-# llm-finetuning
+# Codebase for finetuning LLMs
