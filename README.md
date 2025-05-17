@@ -59,7 +59,7 @@ Once logged in to Grafana, you can follow these steps to configure Grafana.
 7. Click on **Import**.
 8. Now the Dashboard **Node Exporter Full** should open up.
 
-#### Pie Chart Integration
+### Pie Chart Integration
 
 To use the Pie Chart that was installed with the Dockerfile, follow these steps.
 
