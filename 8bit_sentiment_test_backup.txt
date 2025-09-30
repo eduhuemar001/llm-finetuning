@@ -1,0 +1,394 @@
+Evaluating TinyLlama model on CPU
+Token indices sequence length is longer than the specified maximum sequence length for this model (5039 > 2048). Running this sequence through the model will result in indexing errors
+This is a friendly reminder - the current text generation call will exceed the model's predefined maximum length (2048). Depending on the model, you may observe exceptions, performance degradation, or nothing at all.
+Inference wallclock time: 7379.74s
+Inference CPU time: 42004.17s
+
+Memory usage increase during inference: 3433.34 MB
+
+Gültige Modellantworten: 1529 von 3000 (50.97%)
+
+Classification report:
+              precision    recall  f1-score   support
+
+         "er      0.000     0.000     0.000         0
+          "f      0.000     0.000     0.000         0
+          "i      0.000     0.000     0.000         0
+        "pos      0.000     0.000     0.000         0
+           +      0.000     0.000     0.000         0
+         +++      0.000     0.000     0.000         0
+        +and      0.000     0.000     0.000         0
+          +e      0.000     0.000     0.000         0
+          +m      0.000     0.000     0.000         0
+           -      0.000     0.000     0.000         0
+        @ber      0.000     0.000     0.000         0
+         @db      0.000     0.000     0.000         0
+          @k      0.000     0.000     0.000         0
+         @lo      0.000     0.000     0.000         0
+          @m      0.000     0.000     0.000         0
+          @s      0.000     0.000     0.000         0
+        @ste      0.000     0.000     0.000         0
+         ado      0.000     0.000     0.000         0
+        bahn      0.000     0.000     0.000         0
+        bang      0.000     0.000     0.000         0
+      bewert      0.000     0.000     0.000         0
+ bezeichnung      0.000     0.000     0.000         0
+       bezie      0.000     0.000     0.000         0
+        bsch      0.000     0.000     0.000         0
+         bür      0.000     0.000     0.000         0
+       champ      0.000     0.000     0.000         0
+           d      0.000     0.000     0.000         0
+        dank      0.000     0.000     0.000         0
+       danke      0.000     0.000     0.000         0
+         das      0.000     0.000     0.000         0
+         dax      0.000     0.000     0.000         0
+        dear      0.000     0.000     0.000         0
+         der      0.000     0.000     0.000         0
+     deutsch      0.000     0.000     0.000         0
+         die      0.000     0.000     0.000         0
+       diese      0.000     0.000     0.000         0
+          du      0.000     0.000     0.000         0
+         ein      0.000     0.000     0.000         0
+          er      0.000     0.000     0.000         0
+        fest      0.000     0.000     0.000         0
+        fred      0.000     0.000     0.000         0
+         gef      0.000     0.000     0.000         0
+      gerger      0.000     0.000     0.000         0
+      german      0.000     0.000     0.000         0
+         gro      0.000     0.000     0.000         0
+         gut      0.000     0.000     0.000         0
+        gute      0.000     0.000     0.000         0
+         hab      0.000     0.000     0.000         0
+         hai      0.000     0.000     0.000         0
+       hallo      0.000     0.000     0.000         0
+        hass      0.000     0.000     0.000         0
+        hast      0.000     0.000     0.000         0
+     heisser      0.000     0.000     0.000         0
+     herbert      0.000     0.000     0.000         0
+         hey      0.000     0.000     0.000         0
+      histor      0.000     0.000     0.000         0
+        hola      0.000     0.000     0.000         0
+       hotel      0.000     0.000     0.000         0
+         hus      0.000     0.000     0.000         0
+           i      0.000     0.000     0.000         0
+         ich      0.000     0.000     0.000         0
+          ja      0.000     0.000     0.000         0
+        jain      0.000     0.000     0.000         0
+         jem      0.000     0.000     0.000         0
+         jen      0.000     0.000     0.000         0
+         jet      0.000     0.000     0.000         0
+       jetzt      0.000     0.000     0.000         0
+        joko      0.000     0.000     0.000         0
+         jun      0.000     0.000     0.000         0
+        jung      0.000     0.000     0.000         0
+           k      0.000     0.000     0.000         0
+       klass      0.000     0.000     0.000         0
+      klasse      0.000     0.000     0.000         0
+         lär      0.000     0.000     0.000         0
+         me,      0.000     0.000     0.000         0
+        mein      0.000     0.000     0.000         0
+          n2      0.000     0.000     0.000         0
+        nach      0.000     0.000     0.000         0
+         nat      0.000     0.000     0.000         0
+         neg      0.000     0.000     0.000         0
+    negative      0.000     0.000     0.000      1000
+        nein      0.000     0.000     0.000         0
+         neu      0.000     0.000     0.000         0
+        neue      0.000     0.000     0.000         0
+       neuer      0.000     0.000     0.000         0
+        neut      0.000     0.000     0.000         0
+     neutral      0.000     0.000     0.000      1000
+         nie      0.000     0.000     0.000         0
+        nied      0.000     0.000     0.000         0
+       posit      0.000     0.000     0.000         0
+    positive      0.314     0.480     0.380      1000
+       posse      0.000     0.000     0.000         0
+          rt      0.000     0.000     0.000         0
+           s      0.000     0.000     0.000         0
+         sch      0.000     0.000     0.000         0
+      sicher      0.000     0.000     0.000         0
+          st      0.000     0.000     0.000         0
+        stad      0.000     0.000     0.000         0
+        stre      0.000     0.000     0.000         0
+       sturm      0.000     0.000     0.000         0
+       stört      0.000     0.000     0.000         0
+         tar      0.000     0.000     0.000         0
+         und      0.000     0.000     0.000         0
+      versch      0.000     0.000     0.000         0
+      vonvon      0.000     0.000     0.000         0
+                  0.000     0.000     0.000         0
+
+    accuracy                          0.160      3000
+   macro avg      0.003     0.005     0.004      3000
+weighted avg      0.105     0.160     0.127      3000
+
+C:\Users\marku\anaconda3\Lib\site-packages\sklearn\metrics\_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+C:\Users\marku\anaconda3\Lib\site-packages\sklearn\metrics\_classification.py:1531: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+C:\Users\marku\anaconda3\Lib\site-packages\sklearn\metrics\_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+C:\Users\marku\anaconda3\Lib\site-packages\sklearn\metrics\_classification.py:1531: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+C:\Users\marku\anaconda3\Lib\site-packages\sklearn\metrics\_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+C:\Users\marku\anaconda3\Lib\site-packages\sklearn\metrics\_classification.py:1531: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+
+
+Evaluating TinyLlama model on CPU
+Token indices sequence length is longer than the specified maximum sequence length for this model (5039 > 2048). Running this sequence through the model will result in indexing errors
+This is a friendly reminder - the current text generation call will exceed the model's predefined maximum length (2048). Depending on the model, you may observe exceptions, performance degradation, or nothing at all.
+Inference wallclock time: 6591.03s
+Inference CPU time: 38640.36s
+
+Memory usage increase during inference: 3986.24 MB
+
+Gültige Modellantworten: 2977 von 3000 (99.23%)
+
+Classification report:
+              precision    recall  f1-score   support
+
+           -      0.000     0.000     0.000         0
+         bgr      0.000     0.000     0.000         0
+         ein      0.000     0.000     0.000         0
+    interest      0.000     0.000     0.000         0
+          kk      0.000     0.000     0.000         0
+        mehr      0.000     0.000     0.000         0
+    negative      0.737     0.847     0.788      1000
+     neutral      0.872     0.773     0.820      1000
+    positive      0.888     0.836     0.861      1000
+         sch      0.000     0.000     0.000         0
+       thank      0.000     0.000     0.000         0
+         und      0.000     0.000     0.000         0
+        vers      0.000     0.000     0.000         0
+      vonvon      0.000     0.000     0.000         0
+        yes,      0.000     0.000     0.000         0
+          zu      0.000     0.000     0.000         0
+
+    accuracy                          0.819      3000
+   macro avg      0.156     0.153     0.154      3000
+weighted avg      0.832     0.819     0.823      3000
+
+C:\Users\marku\anaconda3\Lib\site-packages\sklearn\metrics\_classification.py:1531: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+C:\Users\marku\anaconda3\Lib\site-packages\sklearn\metrics\_classification.py:1531: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+C:\Users\marku\anaconda3\Lib\site-packages\sklearn\metrics\_classification.py:1531: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+
+
+Device set to use cpu
+Evaluating BERT model on CPU
+Inference wallclock time: 276.60s
+Inference CPU time: 1640.45s
+
+Memory usage increase during inference: 458.81 MB
+
+Gültige Modellantworten: 3000 von 3000 (100.00%)
+
+Classification report:
+              precision    recall  f1-score   support
+
+    negative      0.659     0.751     0.702      1000
+     neutral      0.784     0.677     0.726      1000
+    positive      0.835     0.832     0.833      1000
+
+    accuracy                          0.753      3000
+   macro avg      0.759     0.753     0.754      3000
+weighted avg      0.759     0.753     0.754      3000
+
+
+
+Evaluating TinyLlama model on CUDA
+Inference wallclock time: 539.81s
+
+Gültige Modellantworten: 1529 von 3000 (50.97%)
+
+Classification report:
+              precision    recall  f1-score   support
+
+         "er      0.000     0.000     0.000         0
+          "f      0.000     0.000     0.000         0
+          "i      0.000     0.000     0.000         0
+        "pos      0.000     0.000     0.000         0
+           +      0.000     0.000     0.000         0
+         +++      0.000     0.000     0.000         0
+        +and      0.000     0.000     0.000         0
+          +e      0.000     0.000     0.000         0
+          +m      0.000     0.000     0.000         0
+           -      0.000     0.000     0.000         0
+        @ber      0.000     0.000     0.000         0
+         @db      0.000     0.000     0.000         0
+          @k      0.000     0.000     0.000         0
+         @lo      0.000     0.000     0.000         0
+          @m      0.000     0.000     0.000         0
+          @s      0.000     0.000     0.000         0
+        @ste      0.000     0.000     0.000         0
+         ado      0.000     0.000     0.000         0
+        bahn      0.000     0.000     0.000         0
+        bang      0.000     0.000     0.000         0
+      bewert      0.000     0.000     0.000         0
+ bezeichnung      0.000     0.000     0.000         0
+       bezie      0.000     0.000     0.000         0
+        bsch      0.000     0.000     0.000         0
+         bür      0.000     0.000     0.000         0
+       champ      0.000     0.000     0.000         0
+           d      0.000     0.000     0.000         0
+        dank      0.000     0.000     0.000         0
+       danke      0.000     0.000     0.000         0
+         das      0.000     0.000     0.000         0
+         dax      0.000     0.000     0.000         0
+        dear      0.000     0.000     0.000         0
+         der      0.000     0.000     0.000         0
+     deutsch      0.000     0.000     0.000         0
+         die      0.000     0.000     0.000         0
+       diese      0.000     0.000     0.000         0
+          du      0.000     0.000     0.000         0
+         ein      0.000     0.000     0.000         0
+          er      0.000     0.000     0.000         0
+        fest      0.000     0.000     0.000         0
+        fred      0.000     0.000     0.000         0
+         gef      0.000     0.000     0.000         0
+      gerger      0.000     0.000     0.000         0
+      german      0.000     0.000     0.000         0
+         gro      0.000     0.000     0.000         0
+         gut      0.000     0.000     0.000         0
+        gute      0.000     0.000     0.000         0
+         hab      0.000     0.000     0.000         0
+         hai      0.000     0.000     0.000         0
+       hallo      0.000     0.000     0.000         0
+        hass      0.000     0.000     0.000         0
+        hast      0.000     0.000     0.000         0
+     heisser      0.000     0.000     0.000         0
+     herbert      0.000     0.000     0.000         0
+         hey      0.000     0.000     0.000         0
+      histor      0.000     0.000     0.000         0
+        hola      0.000     0.000     0.000         0
+       hotel      0.000     0.000     0.000         0
+         hus      0.000     0.000     0.000         0
+           i      0.000     0.000     0.000         0
+         ich      0.000     0.000     0.000         0
+          ja      0.000     0.000     0.000         0
+        jain      0.000     0.000     0.000         0
+         jem      0.000     0.000     0.000         0
+         jen      0.000     0.000     0.000         0
+         jet      0.000     0.000     0.000         0
+       jetzt      0.000     0.000     0.000         0
+        joko      0.000     0.000     0.000         0
+         jun      0.000     0.000     0.000         0
+        jung      0.000     0.000     0.000         0
+           k      0.000     0.000     0.000         0
+       klass      0.000     0.000     0.000         0
+      klasse      0.000     0.000     0.000         0
+         lär      0.000     0.000     0.000         0
+         me,      0.000     0.000     0.000         0
+        mein      0.000     0.000     0.000         0
+          n2      0.000     0.000     0.000         0
+        nach      0.000     0.000     0.000         0
+         nat      0.000     0.000     0.000         0
+         neg      0.000     0.000     0.000         0
+    negative      0.000     0.000     0.000      1000
+        nein      0.000     0.000     0.000         0
+         neu      0.000     0.000     0.000         0
+        neue      0.000     0.000     0.000         0
+       neuer      0.000     0.000     0.000         0
+        neut      0.000     0.000     0.000         0
+     neutral      0.000     0.000     0.000      1000
+         nie      0.000     0.000     0.000         0
+        nied      0.000     0.000     0.000         0
+       posit      0.000     0.000     0.000         0
+    positive      0.314     0.480     0.380      1000
+       posse      0.000     0.000     0.000         0
+          rt      0.000     0.000     0.000         0
+           s      0.000     0.000     0.000         0
+         sch      0.000     0.000     0.000         0
+      sicher      0.000     0.000     0.000         0
+          st      0.000     0.000     0.000         0
+        stad      0.000     0.000     0.000         0
+        stre      0.000     0.000     0.000         0
+       sturm      0.000     0.000     0.000         0
+       stört      0.000     0.000     0.000         0
+         tar      0.000     0.000     0.000         0
+         und      0.000     0.000     0.000         0
+      versch      0.000     0.000     0.000         0
+      vonvon      0.000     0.000     0.000         0
+                  0.000     0.000     0.000         0
+
+    accuracy                          0.160      3000
+   macro avg      0.003     0.005     0.004      3000
+weighted avg      0.105     0.160     0.127      3000
+
+/usr/local/lib/python3.11/dist-packages/sklearn/metrics/_classification.py:1565: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+/usr/local/lib/python3.11/dist-packages/sklearn/metrics/_classification.py:1565: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+/usr/local/lib/python3.11/dist-packages/sklearn/metrics/_classification.py:1565: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+/usr/local/lib/python3.11/dist-packages/sklearn/metrics/_classification.py:1565: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+/usr/local/lib/python3.11/dist-packages/sklearn/metrics/_classification.py:1565: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+/usr/local/lib/python3.11/dist-packages/sklearn/metrics/_classification.py:1565: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+
+
+
+Evaluating TinyLlama model on CUDA
+Inference wallclock time: 554.24s
+
+Gültige Modellantworten: 2977 von 3000 (99.23%)
+
+Classification report:
+              precision    recall  f1-score   support
+
+           -      0.000     0.000     0.000         0
+         bgr      0.000     0.000     0.000         0
+         ein      0.000     0.000     0.000         0
+    interest      0.000     0.000     0.000         0
+          kk      0.000     0.000     0.000         0
+        mehr      0.000     0.000     0.000         0
+    negative      0.737     0.847     0.788      1000
+     neutral      0.872     0.773     0.820      1000
+    positive      0.888     0.836     0.861      1000
+         sch      0.000     0.000     0.000         0
+       thank      0.000     0.000     0.000         0
+         und      0.000     0.000     0.000         0
+        vers      0.000     0.000     0.000         0
+      vonvon      0.000     0.000     0.000         0
+        yes,      0.000     0.000     0.000         0
+          zu      0.000     0.000     0.000         0
+
+    accuracy                          0.819      3000
+   macro avg      0.156     0.153     0.154      3000
+weighted avg      0.832     0.819     0.823      3000
+
+/usr/local/lib/python3.11/dist-packages/sklearn/metrics/_classification.py:1565: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+/usr/local/lib/python3.11/dist-packages/sklearn/metrics/_classification.py:1565: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+/usr/local/lib/python3.11/dist-packages/sklearn/metrics/_classification.py:1565: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+
+
+
+Device set to use cuda:0
+Evaluating BERT model on CUDA
+Inference wallclock time: 35.99s
+
+Gültige Modellantworten: 3000 von 3000 (100.00%)
+
+Classification report:
+              precision    recall  f1-score   support
+
+    negative      0.659     0.751     0.702      1000
+     neutral      0.784     0.677     0.726      1000
+    positive      0.835     0.832     0.833      1000
+
+    accuracy                          0.753      3000
+   macro avg      0.759     0.753     0.754      3000
+weighted avg      0.759     0.753     0.754      3000
