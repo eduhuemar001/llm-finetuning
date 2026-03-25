@@ -1,0 +1,278 @@
+---
+title: 'Study Analysis'
+author: "Markus Hüttner"
+output:
+  html_document:
+    df_print: paged
+    theme: readable
+    highlight: zenburn
+    self_contained: true
+---
+
+<style>
+.main-container {
+  max-width: 95% !important;
+  width: 95% !important;
+}
+</style>
+
+## Libraries
+
+```{r, fig.height=8, fig.width=15, warning=FALSE, message=FALSE}
+library(jsonlite)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(effsize)
+library(rstatix)
+```
+
+## Exploratory Data Analysis
+
+### Load and combine data
+
+```{r, fig.height=8, fig.width=15}
+base_dir <- getwd()
+
+# Function to load all JSON files from a folder
+load_json_folder <- function(folder_path, label) {
+  files <- list.files(folder_path, pattern = "\\.json$", full.names = TRUE)
+  
+  data_list <- lapply(files, function(f) {
+    df <- as.data.frame(fromJSON(f))
+    df$file <- basename(f)
+    return(df)
+  })
+  
+  data <- bind_rows(data_list)
+  data$group <- label
+  return(data)
+}
+
+# Load both groups
+data_not_sent <- load_json_folder(file.path(base_dir, "notSentiment"), "NotSentiment")
+data_sent <- load_json_folder(file.path(base_dir, "Sentiment"), "Sentiment")
+
+# Combine into one dataset
+data_all <- bind_rows(data_not_sent, data_sent)
+
+# Inspect
+str(data_all)
+print(data_all)
+```
+
+### Check for NAs
+
+```{r, fig.height=8, fig.width=15}
+colSums(is.na(data_all))
+```
+
+### Check Summary
+
+```{r, fig.height=8, fig.width=15}
+summary(data_all)
+```
+
+### Convert to long format for visualization
+
+```{r, fig.height=8, fig.width=15}
+data_long <- data_all %>%
+  pivot_longer(cols = -c(file, group), names_to = "question", values_to = "rating")
+head(data_long)
+```
+
+### Distribution plots
+
+```{r, fig.height=8, fig.width=15}
+label_map <- c(
+  sat_problem = "Handled problem satisfactorily",
+  sat_helpful = "Responses were helpful",
+  sat_steps = "Suggested steps were meaningful",
+  sat_serious = "Concern was taken seriously",
+  sat_overall = "Overall satisfaction",
+  
+  emp_empathy = "Appeared empathetic",
+  emp_mood = "Responded to user's mood",
+  emp_tone = "Tone was appropriate",
+  emp_underst = "Felt understood",
+  emp_support = "Emotionally supportive",
+  
+  trust_again = "Would trust again",
+  reuse = "Would use again",
+  prof = "Appeared professional",
+  clarity = "Communication was clear"
+)
+
+data_long$rating <- factor(data_long$rating, levels = 1:5)
+data_long$question <- factor(
+  data_long$question,
+  levels = names(label_map)
+)
+data_long$dimension <- dplyr::case_when(
+  data_long$question %in% names(label_map)[1:5]  ~ "Task Satisfaction",
+  data_long$question %in% names(label_map)[6:10] ~ "Perceived Empathy",
+  TRUE ~ "Trust & Overall Impression"
+)
+
+p <- ggplot(data_long, aes(x = rating, fill = group)) +
+  geom_bar(
+    position = position_dodge(width = 0.55, preserve = "single"),
+    width = 0.45,
+    color = NA,
+    alpha = 0.9
+  ) +
+  facet_wrap(~question,
+           ncol = 3,
+           labeller = labeller(question = label_map)) +
+  scale_fill_manual(
+    values = c("#0072B2", "#D55E00"),
+    labels = c("Not Sentiment-Aware", "Sentiment-Aware")
+  ) +
+  scale_x_discrete(drop = FALSE) +
+  scale_y_continuous(breaks = scales::pretty_breaks(n = 6)) +
+  labs(
+    title = "Comparison of Chatbot Ratings",
+    x = "Rating",
+    y = "Number of Responses",
+    fill = "Group"
+  ) +
+  theme_minimal(base_size = 20) +
+  theme(
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor = element_blank(),
+    panel.grid.major.y = element_line(color = "grey85"),
+    
+    strip.text = element_text(size = 14),
+    
+    axis.title.x = element_text(size = 15, margin = margin(t = 8)),
+    axis.title.y = element_text(size = 15, margin = margin(r = 8)),
+    
+    axis.text.x = element_text(size = 12),
+    axis.text.y = element_text(size = 12),
+    
+    plot.title = element_text(size = 17, face = "bold", hjust = 0.5, margin = margin(b = 10)),
+    
+    legend.position = "bottom",
+    legend.title = element_text(face = "bold"),
+    legend.text = element_text(size = 12),
+    
+    panel.spacing = unit(1.2, "lines")
+  )
+
+ggsave("distribution_barplot.png", plot = p,
+       width = 10, height = 14, dpi = 300, bg = "white")
+```
+
+### Boxplots
+
+```{r, fig.height=8, fig.width=15}
+data_long$rating_num <- as.numeric(as.character(data_long$rating))
+
+p <- ggplot(data_long, aes(x = group, y = rating_num, fill = group)) +
+  geom_boxplot(
+    width = 0.6,
+    color = "grey20",
+    alpha = 0.9
+  ) +
+  facet_wrap(~question, ncol = 3,
+             labeller = labeller(question = label_map)) +
+  scale_fill_manual(
+    values = c("#0072B2", "#D55E00"),
+    labels = c("Not Sentiment-Aware", "Sentiment-Aware")
+  ) +
+  labs(
+    title = "Comparison of Chatbot Ratings",
+    x = "Group",
+    y = "Rating",
+    fill = "Group"
+  ) +
+  theme(
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor = element_blank(),
+    panel.grid.major.y = element_line(color = "grey85"),
+    
+    strip.text = element_text(size = 14),
+    strip.background = element_blank(),
+    panel.background = element_blank(),
+    
+    axis.title.x = element_text(size = 15, margin = margin(t = 8)),
+    axis.title.y = element_text(size = 15, margin = margin(r = 8)),
+    
+    axis.text.x = element_text(size = 12),
+    axis.text.y = element_text(size = 12),
+    
+    plot.title = element_text(size = 17, face = "bold", hjust = 0.5, margin = margin(b = 10)),
+    
+    legend.position = "bottom",
+    legend.title = element_text(face = "bold"),
+    legend.text = element_text(size = 12),
+    
+    panel.spacing = unit(1.2, "lines")
+  )
+
+ggsave("boxplots.png", plot = p,
+       width = 10, height = 14, dpi = 300, bg = "white")
+```
+
+## Statistical Analysis
+
+### Create Groups
+
+```{r, fig.height=8, fig.width=15}
+data_all <- data_all %>%
+  mutate(
+    satisfaction = rowMeans(select(., starts_with("sat_")), na.rm = TRUE),
+    empathy = rowMeans(select(., starts_with("emp_")), na.rm = TRUE),
+    trust = rowMeans(select(., trust_again, reuse, prof, clarity), na.rm = TRUE)
+  )
+```
+
+### Normality tests (Shapiro-Wilk)
+
+```{r, fig.height=8, fig.width=15}
+shapiro.test(data_all$satisfaction[data_all$group == "Sentiment"])
+shapiro.test(data_all$satisfaction[data_all$group == "NotSentiment"])
+
+shapiro.test(data_all$empathy[data_all$group == "Sentiment"])
+shapiro.test(data_all$empathy[data_all$group == "NotSentiment"])
+
+shapiro.test(data_all$trust[data_all$group == "Sentiment"])
+shapiro.test(data_all$trust[data_all$group == "NotSentiment"])
+```
+
+H0 (null hypothesis): Data is normally distributed
+If p >  0.05 -> cannot reject normality
+If p <= 0.05 -> data is not normal
+
+### If data is normal then t-test for group comparison
+
+```{r, fig.height=8, fig.width=15}
+t.test(satisfaction ~ group, data = data_all)
+t.test(empathy ~ group, data = data_all)
+# t.test(trust ~ group, data = data_all)
+```
+
+### If data is not normal then wilcoxon test for group comparison
+
+```{r, fig.height=8, fig.width=15}
+# wilcox.test(satisfaction ~ group, data = data_all)
+# wilcox.test(empathy ~ group, data = data_all)
+wilcox.test(trust ~ group, data = data_all)
+```
+
+H0 (null hypothesis): There is no difference between the groups
+If p >  0.05 -> cannot reject H0 (no statistically significant difference)
+If p <= 0.05 -> reject H0 (statistically significant difference between groups)
+
+### How big is the difference?
+
+```{r, fig.height=8, fig.width=15}
+cohen.d(satisfaction ~ group, data = data_all)
+cohen.d(empathy ~ group, data = data_all)
+```
+
+```{r, fig.height=8, fig.width=15}
+wilcox_effsize(data_all, trust ~ group)
+```
+
+
